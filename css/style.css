@@ -597,3 +597,138 @@ h6,
 .frnch div{
     text-align: center;
 }
+/* ---------------------------- */
+/* Défilement de droite à gauche */
+.marquee-rtl {
+    overflow: hidden; /* important */
+    width:50%; max-width: 30em; /* A ADAPTER */
+  }
+  .marquee-rtl > div {
+    display: inline-block; /* important */
+    white-space: nowrap; /* important */
+    animation: defilement-rtl 15s infinite linear; /* défilement */
+    cursor: pointer;
+    padding: 10px 2em 10px 100%;
+  }
+  .marquee-rtl:hover > div {
+    animation-play-state: paused; /* met en pause le défilement */
+  }
+  .marquee-rtl > div:first-letter {
+    font-weight: 700;
+    color: #F00;
+  }
+  @keyframes defilement-rtl {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+    100% {
+      -webkit-transform: translate(-100%);
+      transform: translate(-100%);
+    }
+  }
+  /* ---------------------------- */
+  /* texte sur plusieurs lignes automatiquement */
+  .marquee-multi-lignes > div { 
+    width:90%; 
+    white-space: normal; /* important */
+  }
+  
+  /* ---------------------------- */
+  /* déco */
+  h2, p { text-align:center; }
+  
+  .marquee-rtl {
+    margin: 2em auto;
+    border: 10px solid #F0F0FF;
+    box-shadow: 0 .25em .5em #CCC,inset 0 0 1em .25em #CCC;
+  }
+  .marquee-rtl > div {
+    font-size: 1.5em;
+  }
+
+
+  .cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+  }
+  
+  .card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+  }
+  
+  .card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+  }
+  
+  .card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+  }
+  
+  .title-white {
+    color: white;
+  }
+  
+  .title-black {
+    color: black;
+  }
+  
+  @media all and (max-width: 500px) {
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+  .rowsI{
+    display: flex;
+    height: ;
+    overflow-x: hidden;
+  }
+  /*
+  .card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    transition: 0.4s;
+  }
+  */
+  .container-xxl li{
+    list-style-type: none;
+  }
